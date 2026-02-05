@@ -1,0 +1,47 @@
+name: ChatProtect
+version: 1.0.0
+main: com.mistasoup.chatprotect.ChatProtect
+api-version: 1.21
+author: MistaSoup
+description: Advanced anti-spam and chat protection plugin
+website: https://github.com/MistaSoup/ChatProtect
+folia-supported: true
+
+commands:
+  chatprotect:
+    description: Main ChatProtect command
+    usage: /<command> reload
+    aliases: [cp, antispam]
+    permission: chatprotect.admin
+  msg:
+    description: Send a private message
+    usage: /<command> <player> <message>
+  w:
+    description: Send a private message
+    usage: /<command> <player> <message>
+  whisper:
+    description: Send a private message
+    usage: /<command> <player> <message>
+  tell:
+    description: Send a private message
+    usage: /<command> <player> <message>
+  pm:
+    description: Send a private message
+    usage: /<command> <player> <message>
+  dm:
+    description: Send a private message
+    usage: /<command> <player> <message>
+  r:
+    description: Reply to the last person who messaged you
+    usage: /<command> <message>
+  reply:
+    description: Reply to the last person who messaged you
+    usage: /<command> <message>
+
+permissions:
+  chatprotect.admin:
+    description: Access to ChatProtect admin commands
+    default: op
+  chatprotect.bypass:
+    description: Bypass all anti-spam checks
+    default: false

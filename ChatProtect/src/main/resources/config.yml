@@ -1,0 +1,130 @@
+# ChatProtect Configuration
+# Advanced anti-spam and chat protection plugin
+# Author: MistaSoup | Version: 1.0.0
+
+# General Settings
+settings:
+  # Maximum number of messages to track per player
+  message-history-size: 10
+  
+  # Similarity threshold for duplicate detection (0-100%)
+  # Higher = more strict, Lower = more lenient
+  similarity-threshold: 75
+  
+  # Enable debug logging (logs blocked messages)
+  debug: true
+  
+  # Enable verbose logging (logs every processing step)
+  verbose: true
+
+# Duplicate Message Detection
+duplicate-messages:
+  # Number of times a player can repeat a similar message
+  max-repeats: 2
+  
+  # Cooldown in seconds before they can send similar message again
+  cooldown-seconds: 30
+
+# Blocked Words Filter
+blocked-words:
+  # Enable blocked word filtering
+  enabled: true
+  
+  # List of blocked words (automatically detects variations)
+  # Supports leetspeak, symbols, and substitutions
+  word-list:
+    - fuck
+    - shit
+    - bitch
+    - ass
+    - damn
+    - hell
+    - crap
+    - nigger
+    - nigga
+    - fag
+    - faggot
+    - retard
+    - slut
+    - whore
+    - dick
+    - cock
+    - pussy
+    - cunt
+
+# Anti-Spam Kick Settings
+anti-spam-kick:
+  # Enable automatic kicking for spam
+  enabled: true
+  
+  # Number of messages sent within the time window to trigger a kick
+  message-threshold: 7
+  
+  # Time window in seconds to count messages
+  time-window-seconds: 5
+  
+  # Kick message
+  kick-message: "&cYou have been kicked for spamming!"
+
+# Auto-Mute Settings (for repeated spam offenders)
+auto-mute:
+  # Enable auto-mute for players who get spam-kicked repeatedly
+  enabled: true
+  
+  # Number of spam kicks within the time window to trigger a mute
+  kick-threshold: 3
+  
+  # Time window in minutes to count kicks
+  kick-window-minutes: 10
+  
+  # Duration of mute in seconds
+  mute-duration-seconds: 300
+  
+  # Message shown when muted player tries to chat
+  # {time} = seconds remaining
+  mute-message: "&cYou are muted for spamming. Time remaining: &e{time} &cseconds."
+  
+  # Allow muted players to receive private messages (they still can't send)
+  allow-receive-pm: true
+
+# Messages (set to empty string to disable)
+messages:
+  reload-success: "&aConfiguration reloaded successfully!"
+  no-permission: "&cYou don't have permission to use this command!"
+
+# Private Messaging Settings
+private-messaging:
+  # Enable private messaging system
+  enabled: true
+  
+  # Color code for private messages (use & color codes)
+  message-color: "&d"
+  
+  # Commands that trigger private messaging (will intercept these)
+  commands:
+    - msg
+    - message
+    - w
+    - whisper
+    - tell
+    - pm
+    - dm
+    - r
+    - reply
+  
+  # Format for sent messages: {sender} = sender name, {receiver} = receiver name, {message} = the message
+  sent-format: "&7[&dYou &7-> &d{receiver}&7] &r{message}"
+  
+  # Format for received messages
+  received-format: "&7[&d{sender} &7-> &dYou&7] &r{message}"
+
+# Public Chat Colors
+chat-colors:
+  # Enable special chat color prefix
+  enabled: true
+  
+  # Symbol that triggers colored chat (default: >)
+  color-prefix: ">"
+  
+  # Color for messages starting with the prefix (use & color codes)
+  prefix-color: "&a"
